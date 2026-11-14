@@ -1,0 +1,7 @@
+{
+  "chunk_id": "0192f3a0-7b1e-7c3a-9d2e-4a5b6c7d8e01",
+  "document_title": "Invoice Approval Policy",
+  "text": "Invoices whose total exceeds the purchase order by more than 5% require manager approval before payment.",
+  "score": 0.82,
+  "source_path": "policies/invoice_approval.md"
+}

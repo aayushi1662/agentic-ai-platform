@@ -1,0 +1,39 @@
+# Local development stack. Everything is open source.
+# Image tags below are my best choice at time of writing: verify they still exist before relying on them.
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: platform
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d platform"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  valkey:
+    image: valkey/valkey:8
+    ports:
+      - "${VALKEY_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # --- Added by the owners as they build (port map in README) ---
+  # ingest:      Person A, Django + Celery worker, port 8000
+  # runs:        Person B, FastAPI + LangGraph, port 8001
+  # mock_erp:    Person B, FastAPI, port 8002
+  # mcp_servers: Person B, ports 8010+
+  # frontend:    both, port 3000
+  # Ollama normally runs on the host (port 11434) so it can use your GPU or Apple Silicon.
+
+volumes:
+  pgdata:

@@ -1,0 +1,16 @@
+{
+  "drafts": [
+    {
+      "type": "vendor_email",
+      "to_role": "vendor",
+      "subject": "Clarification needed on invoice INV-2026-0187",
+      "body": "Hello, invoice INV-2026-0187 totals INR 420,000.00 but PO-1042 was issued for INR 380,000.00. Please confirm the difference."
+    },
+    {
+      "type": "approval_request",
+      "to_role": "manager",
+      "subject": "Approval needed: INV-2026-0187 exceeds PO by 10.53%",
+      "body": "The invoice exceeds the purchase order by more than the 5% policy limit. Please approve, edit, or reject."
+    }
+  ]
+}

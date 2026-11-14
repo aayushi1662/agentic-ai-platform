@@ -1,0 +1,8 @@
+{
+  "decision": "edit",
+  "edits": {
+    "vendor_email.subject": "Please confirm shipping charge on INV-2026-0187"
+  },
+  "comment": null,
+  "decided_by": "manager@example.com"
+}

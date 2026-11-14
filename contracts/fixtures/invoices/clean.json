@@ -1,0 +1,21 @@
+{
+  "invoice_number": "INV-2026-0101",
+  "vendor_name": "Bright Office Mart",
+  "po_number": "PO-1001",
+  "invoice_date": "2026-10-20",
+  "due_date": "2026-11-19",
+  "currency": "INR",
+  "total_amount": "95000.00",
+  "line_items": [
+    {
+      "description": "Office chairs",
+      "quantity": "10",
+      "unit_price": "9500.00",
+      "amount": "95000.00"
+    }
+  ],
+  "confidence": {
+    "total_amount": 0.97,
+    "po_number": 0.95
+  }
+}

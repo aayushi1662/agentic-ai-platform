@@ -1,0 +1,99 @@
+{
+  "run_id": "0192f3a0-7b1e-7c3a-9d2e-4a5b6c7d8e10",
+  "tenant_id": "11111111-1111-4111-8111-111111111111",
+  "document_id": "0192f3a0-7b1e-7c3a-9d2e-4a5b6c7d8e11",
+  "status": "waiting_approval",
+  "created_at": "2026-11-12T09:30:00Z",
+  "updated_at": "2026-11-12T09:30:07Z",
+  "steps": [
+    {
+      "step_id": "0192f3a0-7b1e-7c3a-9d2e-4a5b6c7d8e21",
+      "name": "check_purchase_order",
+      "agent": "checker",
+      "status": "succeeded",
+      "started_at": "2026-11-12T09:30:01Z",
+      "ended_at": "2026-11-12T09:30:02Z",
+      "input": {
+        "po_number": "PO-1042"
+      },
+      "output": {
+        "po_found": true,
+        "variance_amount": "40000.00",
+        "variance_percent": "10.53",
+        "mismatches": [],
+        "duplicate_run_ids": []
+      },
+      "tool_calls": [
+        {
+          "tool": "get_purchase_order",
+          "arguments": {
+            "po_number": "PO-1042",
+            "tenant_id": "11111111-1111-4111-8111-111111111111"
+          },
+          "result_summary": "PO-1042 found, ordered_total 380000.00 INR",
+          "duration_ms": 120
+        }
+      ],
+      "error": null
+    },
+    {
+      "step_id": "0192f3a0-7b1e-7c3a-9d2e-4a5b6c7d8e22",
+      "name": "apply_policy",
+      "agent": "policy",
+      "status": "succeeded",
+      "started_at": "2026-11-12T09:30:02Z",
+      "ended_at": "2026-11-12T09:30:04Z",
+      "input": {},
+      "output": {
+        "approval_required": true
+      },
+      "tool_calls": [
+        {
+          "tool": "search_policies",
+          "arguments": {
+            "query": "invoice exceeds purchase order variance",
+            "tenant_id": "11111111-1111-4111-8111-111111111111",
+            "top_k": 5
+          },
+          "result_summary": "3 chunks, best score 0.82",
+          "duration_ms": 340
+        }
+      ],
+      "error": null
+    },
+    {
+      "step_id": "0192f3a0-7b1e-7c3a-9d2e-4a5b6c7d8e23",
+      "name": "draft_replies",
+      "agent": "action",
+      "status": "succeeded",
+      "started_at": "2026-11-12T09:30:04Z",
+      "ended_at": "2026-11-12T09:30:07Z",
+      "input": {},
+      "output": {
+        "drafts": 2
+      },
+      "tool_calls": [],
+      "error": null
+    }
+  ],
+  "pending_approval": {
+    "reasons": [
+      "variance 10.53% exceeds 5% limit"
+    ],
+    "drafts": [
+      {
+        "type": "vendor_email",
+        "to_role": "vendor",
+        "subject": "Clarification needed on invoice INV-2026-0187",
+        "body": "Hello, invoice INV-2026-0187 totals INR 420,000.00 but PO-1042 was issued for INR 380,000.00. Please confirm the difference."
+      },
+      {
+        "type": "approval_request",
+        "to_role": "manager",
+        "subject": "Approval needed: INV-2026-0187 exceeds PO by 10.53%",
+        "body": "The invoice exceeds the purchase order by more than the 5% policy limit. Please approve, edit, or reject."
+      }
+    ]
+  },
+  "result": null
+}

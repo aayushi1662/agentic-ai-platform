@@ -1,0 +1,12 @@
+{
+  "error": {
+    "code": "forbidden",
+    "message": "Only approvers or admins may post a decision.",
+    "details": {
+      "required_roles": [
+        "approver",
+        "admin"
+      ]
+    }
+  }
+}

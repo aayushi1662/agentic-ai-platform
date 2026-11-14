@@ -1,0 +1,10 @@
+# Replace the placeholder handles with your real GitHub usernames.
+# Himanshi = Person A, Aayushi = Person B
+/services/ingest/        @HIMANSHI_GITHUB
+/services/runs/          @aayushi1662
+/services/mock_erp/      @aayushi1662
+/services/mcp_servers/   @aayushi1662
+# Shared: both must review
+/contracts/              @HIMANSHI_GITHUB @aayushi1662
+/infra/                  @HIMANSHI_GITHUB @aayushi1662
+/docs/decisions/         @HIMANSHI_GITHUB @aayushi1662

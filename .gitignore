@@ -1,0 +1,16 @@
+.env
+.dev-keys/
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+*.log
+/media/
+/data/uploads/

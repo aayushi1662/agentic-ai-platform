@@ -1,0 +1,14 @@
+{
+  "rules_applied": [
+    {
+      "rule_id": "variance_over_5_percent",
+      "title": "Variance above 5% needs manager approval",
+      "source_chunk_id": "0192f3a0-7b1e-7c3a-9d2e-4a5b6c7d8e01",
+      "outcome": "approval_required"
+    }
+  ],
+  "approval_required": true,
+  "reasons": [
+    "variance 10.53% exceeds 5% limit"
+  ]
+}

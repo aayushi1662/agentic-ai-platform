@@ -1,0 +1,13 @@
+{
+  "po_found": true,
+  "variance_amount": "40000.00",
+  "variance_percent": "10.53",
+  "mismatches": [
+    {
+      "field": "total_amount",
+      "invoice_value": "420000.00",
+      "po_value": "380000.00"
+    }
+  ],
+  "duplicate_run_ids": []
+}

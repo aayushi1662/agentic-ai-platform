@@ -1,0 +1,7 @@
+# Keep line endings consistent between Windows, macOS, and Linux laptops.
+* text=auto eol=lf
+*.sh text eol=lf
+*.sql text eol=lf
+*.json text eol=lf
+*.png binary
+*.pdf binary
